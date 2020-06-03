@@ -40,3 +40,10 @@ toast.remove().then(()=>{
 | timeout    | 延时多长时间关闭，若autoClose为false则此项无效，单位ms | 1500   |
 | transition | 是否有过渡动画                                         | false  |
 
+### demo
+
+https://nangxif.github.io/toast/dist/index.html
+
+### 官网
+
+https://nangxif.github.io/toast/
