@@ -1,29 +1,42 @@
 # toast
 
-## Project setup
-```
-npm install
+```javascript
+//安装
+npm i @nangxif/toast
+yarn add @nangxif/toast
+
+//引入
+import toast from '@nangxif/toast';
+Vue.use(toast);
+
+//使用
+//创建toast
+const toast = this.$toast({
+	text: '这是一个toast',
+	ownStyle: { 'border-radius': '6px' },
+	autoClose: true,
+	timeout: 3500,
+	transition: true
+})
+
+//显示
+toast.show().then(()=>{
+	//todo
+})
+//若autoClose为false，则需要手动隐藏
+toast.remove().then(()=>{
+	//todo
+})
+
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 参数说明
 
-### Compiles and minifies for production
-```
-npm run build
-```
+| 参数       | 含义                                                   | 默认值 |
+| ---------- | ------------------------------------------------------ | ------ |
+| text       | toast显示的内容                                        | ''     |
+| ownStyle   | toast的样式对象                                        | {}     |
+| autoClose  | 是否自动关闭                                           | true   |
+| timeout    | 延时多长时间关闭，若autoClose为false则此项无效，单位ms | 1500   |
+| transition | 是否有过渡动画                                         | false  |
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
