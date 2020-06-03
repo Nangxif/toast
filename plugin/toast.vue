@@ -1,8 +1,9 @@
 <template>
   <div class="toast">
-    <transition name="toast">
+    <transition name="toast" v-if="transition">
       <div class="toast_box" :style="ownStyle" v-if="isShow">{{ text }}</div>
     </transition>
+    <div class="toast_box" :style="ownStyle" v-else>{{ text }}</div>
   </div>
 </template>
 <script>
@@ -23,6 +24,10 @@ export default {
       default: () => {
         return {};
       }
+    },
+    transition: {
+      type: Boolean,
+      default: false
     }
   },
   mounted() {
@@ -46,6 +51,7 @@ export default {
   align-items: center;
   font-size: vw(30);
   z-index: 1000;
+  pointer-events: none;
   .toast_box {
     padding: 8px 10px;
     background-color: rgba(0, 0, 0, 0.5);

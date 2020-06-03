@@ -40,6 +40,7 @@ function create(component) {
     // 显示
     child.show = function() {
       document.body.appendChild(vm.$el);
+      // console.log(document.body.contains(vm.$el));
       if (autoClose) {
         return new Promise(resolve => {
           const showTime = setTimeout(() => {
