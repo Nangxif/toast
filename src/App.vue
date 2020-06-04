@@ -7,6 +7,9 @@
       3500ms自动关闭有动画toast
     </button>
     <button type="button" class="btn" @click="toast3">手动关闭toast</button>
+    <button type="button" class="btn" @click="toast4">
+      模拟点击下载二维码
+    </button>
   </div>
 </template>
 
@@ -58,6 +61,19 @@ export default {
           );
         }, 0);
       });
+    },
+    toast4() {
+      const toast_4 = this.$toast({
+        text: '二维码生成中……',
+        ownStyle: {
+          'border-radius': '6px'
+        },
+        autoClose: false
+      });
+      toast_4.show();
+      setTimeout(() => {
+        toast_4.remove();
+      }, 2000);
     }
   },
   mounted() {}
