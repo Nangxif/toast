@@ -1,6 +1,6 @@
 {
   "name": "@nangxif/toast",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "toast提示",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,6 +22,8 @@
   "devDependencies": {
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "vue-loader": "^15.9.2",

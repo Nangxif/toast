@@ -10,6 +10,9 @@
     <button type="button" class="btn" @click="toast4">
       模拟点击下载二维码
     </button>
+    <button type="button" class="btn" @click="toast5">
+      长文字
+    </button>
   </div>
 </template>
 
@@ -74,6 +77,15 @@ export default {
       setTimeout(() => {
         toast_4.remove();
       }, 2000);
+    },
+    toast5() {
+      this.$toast({
+        text: '这里的文字太长了，导致换行显示',
+        ownStyle: { 'border-radius': '6px' },
+        autoClose: true,
+        timeout: 3500,
+        transition: true
+      }).show();
     }
   },
   mounted() {}

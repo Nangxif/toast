@@ -16,12 +16,22 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
         test: /\.(scss|sass)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => {
+                // postcss的插件
+                return require('postcss-preset-env')();
+              }
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.js$/,

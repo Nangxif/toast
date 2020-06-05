@@ -56,6 +56,8 @@ export default {
     padding: 8px 10px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    max-width: vw(400);
+    text-align: center;
   }
 }
 .toast-enter,
