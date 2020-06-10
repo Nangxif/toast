@@ -51,7 +51,6 @@ export default {
   align-items: center;
   font-size: vw(30);
   z-index: 1000;
-  pointer-events: none;
   .toast_box {
     padding: 8px 10px;
     background-color: rgba(0, 0, 0, 0.5);
