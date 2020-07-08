@@ -104,7 +104,7 @@
   }).show();
     </pre>
 
-    <img :src="bgimage" @error="loaderror" style="display:none;" />
+    <img :src="bgimage" @error="loaderror" width="0px" height="0px" />
   </div>
 </template>
 
