@@ -90,6 +90,7 @@
     ownStyle: {
       width: '100vw',
       height: '100%',
+      // 注意，这里必须调整max-width
       'max-width': '100vw',
       'background-color': 'rgba(0,0,0,0.5)',
       'background-image': `url('${require('./assets/logo.png')}')`,
@@ -102,12 +103,19 @@
     transition: true
   }).show();
     </pre>
+
+    <img :src="bgimage" @error="loaderror" style="display:none;" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      bgimage: require('./assets/logo.png')
+    };
+  },
   methods: {
     toast1() {
       this.$toast({
@@ -184,7 +192,7 @@ export default {
           height: '100%',
           'max-width': '100vw',
           'background-color': 'rgba(0,0,0,0.5)',
-          'background-image': `url('${require('./assets/logo.png')}')`,
+          'background-image': `url('${this.bgimage}')`,
           'background-repeat': 'no-repeat',
           'background-size': '60% auto',
           'background-position': '50% 40%'
@@ -193,6 +201,9 @@ export default {
         timeout: 3500,
         transition: true
       }).show();
+    },
+    loaderror() {
+      this.bgimage = 'https://cn.vuejs.org/images/logo.png';
     }
   },
   mounted() {}
